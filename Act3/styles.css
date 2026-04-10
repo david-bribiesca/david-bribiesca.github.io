@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Comic Sans MS", "Impact", sans-serif;
+    background: repeating-linear-gradient(
+        45deg,
+        #ffcccc 0 20px,
+        #ccffcc 20px 40px,
+        #ccccff 40px 60px
+    );
+    padding: 20px;
+}
+
+#head {
+    background: linear-gradient(90deg, black, purple, navy);
+    color: #00ff00;
+    border: 10px dashed red;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h1, h2 {
+    font-size: 2.5em;
+    color: yellow;
+    background: linear-gradient(45deg, red, magenta, cyan);
+    text-align: center;
+    padding: 10px;
+    border: 5px double black;
+    text-decoration: underline wavy red;
+}
+
+.blk {
+    background: white;
+    border: 5px ridge brown;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.hl {
+    font-size: 2em;
+    background: linear-gradient(90deg, red, orange, yellow);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border: 3px dashed black;
+}
+
+.data {
+    background: red;
+    color: yellow;
+    padding: 10px;
+    border: 3px dashed lime;
+    margin: 10px 0;
+    font-family: monospace;
+}
+
+.qa {
+    background: navy;
+    color: yellow;
+    padding: 15px;
+    border: 3px solid lime;
+}
+
+.q {
+    font-weight: bold;
+    text-decoration: underline wavy lime;
+}
+
+.a {
+    background: white;
+    color: black;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+img {
+    width: 100%;
+    border: 5px dashed magenta;
+    filter: hue-rotate(180deg) saturate(2);
+}

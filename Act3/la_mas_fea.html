@@ -3,91 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semestre FJ 2026: #A1</title>
+    <title>#A3</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <h1>La página más fea: #A3</h1>
-    <p><strong>Name:</strong> David Bribiesca</p>
-
-    <hr>
-
-    <h2>1. HTML</h2>
+<body id="main">
     
-    <h3>Introduction</h3>
-    
-    <p><strong>What is HTML?</strong></p>
-    <p>Es una forma de crear una pagina web a través de elementos definidos como párrafos, encabezados, enlaces, imágenes, etc.</p>
+    <header id="head" class="box">
+        <h1 class="t1">La página más fea: #A3</h1>
+        <p class="data"><strong>Name:</strong> David Bribiesca</p>
+    </header>
 
-    <p><strong>Explain the head and the body tags.</strong></p>
-    <p>En Head we have the informaciónn adicional que necesita el navegador in order to have better results while searching, mientras que el body is the section where you define the cosas visibles para el usuario.</p>
+    <hr class="sep">
 
-    <h3>Basic Tags</h3>
-    
-    <p><strong>Explain the section, article, aside, header, footer tag?</strong></p>
-    <p>Son etiquitas que permitan una correcta semántica, es decir una mejor estructura. Es como devir que abajo de una persona van los pies, a los lados los brazos, etc. (En teroía se puede hacer una página solo con "pies" pero  es una práctica incorrecta). Section sirve para agrupar contenido relacionado.Article sirve para agrupar contienido independiente entre sí, aside sirve para poner información de un lado de la página, header es el menú que va arriba de la mayoría de las páginas, mientras que footer es el de abajo.<label for=""></label> </p>
+    <section id="s-html" class="blk">
+        <h2 class="t2">1. HTML</h2>
+        
+        <article class="sub g-1">
+            <h3 class="t3">Introduction</h3>
+            
+            <div class="qa i1">
+                <p class="q"><strong>What is HTML?</strong></p>
+                <p class="a">Es una forma de crear una pagina web a través de elementos definidos como párrafos, encabezados, enlaces, imágenes, etc.</p>
+            </div>
 
-    <p><strong>Create an unordered list. Create an ordered list.</strong></p>
-    <p>Done</p>
+            <div class="qa i2">
+                <p class="q"><strong>Explain the head and the body tags.</strong></p>
+                <p class="a">En Head we have the informaciónn adicional que necesita el navegador in order to have better results while searching, mientras que el body is the section where you define the cosas visibles para el usuario.</p>
+            </div>
+        </article>
 
-    <p><strong>Create a basic table using html.</strong></p>
-    <p>Done</p>
+        <article class="sub g-2">
+            <h3 class="t3">Basic Tags</h3>
+            
+            <div class="qa i3">
+                <p class="q"><strong>Explain the section, article, aside, header, footer tag?</strong></p>
+                <p class="a">Son etiquetas que permitan una correcta semántica, es decir una mejor estructura. Es como decir que abajo de una persona van los pies, a los lados los brazos, etc. (En teroía se puede hacer una página solo con "pies" pero es una práctica incorrecta). Section sirve para agrupar contenido relacionado. Article sirve para agrupar contienido independiente entre sí, aside sirve para poner información de un lado de la página, header es el menú que va arriba de la mayoría de las páginas, mientras que footer es el de abajo.</p>
+            </div>
 
-    <hr>
+            <div class="qa i4">
+                <p class="q"><strong>Create an unordered list. Create an ordered list.</strong></p>
+                <p class="a hl">Done</p>
+            </div>
 
-    <h2>2. CSS</h2>
-    
-    <h3>Introduction</h3>
-    
-    <p><strong>What is CSS?</strong></p>
-    <p>[Explica qué es CSS]</p>
+            <div class="qa i5">
+                <p class="q"><strong>Create a basic table using html.</strong></p>
+                <p class="a hl">Done</p>
+            </div>
+        </article>
+    </section>
 
-    <p><strong>What is the purpose of CSS?</strong></p>
-    <p>El CSS es la herramienta que permite dar estilo y diseño a las páginas web. puede tanto cambiar aspecto, posición, etc.</p>
+    <hr class="sep">
 
-    <p><strong>How do you apply a CSS to an HTML (explain the 3 options) What is a selector?</strong></p>
-    <p>La primera forma es agregar el atributo style a cada uno de las etiquetas del html, la segunda forma es dentro de unas etiqutas style poder describir el que estilo tendría cada etiqueta, para saber qué elementos se utiliza un selector, que puede ir desde seleccionar todos los elementos, algunos de unas clases, o específicamente uno. Y la tercera y última opción es utilizar un archivo .css separado donde vayan cada uno de los estilos, y es muy similar a la segunda opción, solo que ahora está separado el html del css.</p>
+    <section id="s-css" class="blk">
+        <h2 class="t2">2. CSS</h2>
+        
+        <article class="sub g-3">
+            <h3 class="t3">Introduction</h3>
+            
+            <div class="qa i6">
+                <p class="q"><strong>What is CSS?</strong></p>
+                <p class="a">Es un lenguaje de hojas de estilo que usamos para describir la presentación de un documento escrito en HTML. Básicamente, si el HTML es el esqueleto de la página, el CSS es la ropa, el diseño y los colores.</p>
+            </div>
 
-    <p><strong>What is a CSS rule?</strong></p>
-    <p>Una regla indica cómo es que se debe de ver cada elemento en la página. va complementado del selector.</p>
+            <div class="qa i7">
+                <p class="q"><strong>What is the purpose of CSS?</strong></p>
+                <p class="a">El CSS es la herramienta que permite dar estilo y diseño a las páginas web. puede tanto cambiar aspecto, posición, etc.</p>
+            </div>
 
-    <p><strong>Play the 32 levels of https://flukeout.github.io/</strong></p>
-    <img src="flukeout" alt="">
+            <div class="qa i8">
+                <p class="q"><strong>How do you apply a CSS to an HTML (explain the 3 options) What is a selector?</strong></p>
+                <p class="a">La primera forma es agregar el atributo style a cada uno de las etiquetas del html, la segunda forma es dentro de unas etiqutas style poder describir el que estilo tendría cada etiqueta, para saber qué elementos se utiliza un selector, que puede ir desde seleccionar todos los elementos, algunos de unas clases, o específicamente uno. Y la tercera y última opción es utilizar un archivo .css separado donde vayan cada uno de los estilos, y es muy similar a la segunda opción, solo que ahora está separado el html del css.</p>
+            </div>
 
-    <h3>Basic CSS</h3>
-    
-    <p><strong>Explain a:</strong></p>
-    <ul>
-        <li><strong>Tag Selector:</strong> [Explica el selector de etiqueta]</li>
-        <li><strong>Class Selector:</strong> [Explica el selector de clase]</li>
-        <li><strong>Tag and Class Selector:</strong> [Explica el selector combinado de etiqueta y clase]</li>
-        <li><strong>Id Selector:</strong> [Explica el selector de Id]</li>
-    </ul>
+            <div class="qa i9">
+                <p class="q"><strong>What is a CSS rule?</strong></p>
+                <p class="a">Una regla indica cómo es que se debe de ver cada elemento en la página. va complementado del selector.</p>
+            </div>
 
-    <p><strong>What is a class? What is an id? How are they related to CSS?</strong></p>
-    <p>[Explica qué son clases e ids y su relación con CSS]</p>
+            <div class="qa img-c i10">
+                <p class="q"><strong>Play the 32 levels of https://flukeout.github.io/</strong></p>
+                <img src="img/select.png" alt="Niveles de CSS Diner terminados" class="img">
+            </div>
+        </article>
 
-    <p><strong>Explain the CSS Box Model? Show an example.</strong></p>
-    <p>[Explica el modelo de caja e inserta un ejemplo de código]</p>
+        <article class="sub f-1">
+            <h3 class="t3">Basic CSS</h3>
+            
+            <div class="qa f-i1">
+                <p class="q"><strong>Explain a:</strong></p>
+                <ul class="list">
+                    <li><strong>Tag Selector:</strong> Selecciona todos los elementos de un tipo de etiqueta HTML en específico.</li>
+                    <li><strong>Class Selector:</strong> Selecciona elementos que comparten un atributo de clase específico.</li>
+                    <li><strong>Tag and Class Selector:</strong> Es la combinación de los dos anteriores.</li>
+                    <li><strong>Id Selector:</strong> Selecciona un elemento único basándose en su atributo id.</li>
+                </ul>
+            </div>
 
-    <p><strong>Explain the media queries</strong></p>
-    <p>[Explica las media queries]</p>
+            <div class="qa f-i2">
+                <p class="q"><strong>What is a class? What is an id? How are they related to CSS?</strong></p>
+                <p class="a">Una clase te permite agrupar varios elementos que comparten características, mientras que el id es un identificador único para cada elemento.</p>
+            </div>
 
-    <h3>Layout CSS</h3>
-    
-    <p><strong>Explain display: grid</strong></p>
-    <p>[Explica CSS Grid]</p>
+            <div class="qa f-i3">
+                <p class="q"><strong>Explain the CSS Box Model? Show an example.</strong></p>
+                <p class="a">En CSS, literalmente todos los elementos son cajas. El Box Model explica la estructura de estas cajas.</p>
+                <pre class="code"><code>
+    .mi-caja {
+        width: 300px;
+        padding: 15px;
+        border: 2px solid;
+        margin: 20px;
+    }
+                </code></pre>
+            </div>
 
-    <p><strong>Explain display: flex</strong></p>
-    <p>[Explica CSS Flexbox]</p>
+            <div class="qa f-i4">
+                <p class="q"><strong>Explain the media queries</strong></p>
+                <p class="a">Son reglas que te permiten aplicar estilos CSS diferentes dependiendo de las características de la pantalla o dispositivo.</p>
+            </div>
+        </article>
 
-    <p><strong>Play the 24 levels of https://flexboxfroggy.com/</strong></p>
-    <p>[Escribe Done o inserta evidencia de los niveles]</p>
+        <article class="sub g-4">
+            <h3 class="t3">Layout CSS</h3>
+            
+            <div class="qa i11">
+                <p class="q"><strong>Explain display: grid</strong></p>
+                <p class="a">Es un sistema de layout bidimensional de CSS. Permite dividir el espacio en filas y columnas.</p>
+            </div>
 
-    <p><strong>Create an html challenge</strong></p>
-    <p>[Inserta aquí tu HTML challenge]</p>
+            <div class="qa i12">
+                <p class="q"><strong>Explain display: flex</strong></p>
+                <p class="a">Es un sistema de layout unidimensional. Su propósito es alinear y distribuir el espacio.</p>
+            </div>
 
-    <p><strong>Apply a css framework to your wikileaks clone page. (Screenshot)</strong></p>
-    <p>[Inserta aquí el screenshot de tu página clon con el framework]</p>
+            <div class="qa img-c i13">
+                <p class="q"><strong>Play the 24 levels of https://flexboxfroggy.com/</strong></p>
+                <img src="img/flex.png" alt="Niveles de Flexbox Froggy terminados" class="img">
+            </div>
+
+            <div class="qa i14">
+                <p class="q"><strong>Create an html challenge</strong></p>
+                <p class="a">Reto: Crea la estructura de un "Card" de producto para un e-commerce usando HTML semántico.</p>
+            </div>
+
+            <div class="qa img-c i15">
+                <p class="q"><strong>Apply a css framework to your wikileaks clone page. (Screenshot)</strong></p>
+                <p>Done</p>
+            </div>
+        </article>
+    </section>
 
 </body>
 </html>
