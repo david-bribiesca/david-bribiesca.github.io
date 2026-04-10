@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Clase antes de vacaciones</title>
+      <link rel="stylesheet" href="styles.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body style="color:bisque;">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <div id="contenedor">
+      <div class="elemento"> Sección 1</div>
+      <div class="elemento"> Sección 2</div>
+        <div class="elemento"> Sección 3</div>
+    </div> 
+
+    <div id="encabezado">
+
+    </div>
+    <button id="obtain" class="btn"> Obtener </button>
+
+    <div id="artista" >
+        <div class="d-flex flex-row">
+            <div class="card">
+                <img src="" alt="" id="img1" class="card-img-top ">
+                <div class="card-body">
+                    <p id="bio1"></p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="" alt="" id="img2" class="card-img-top">
+                <div class="card-body">
+                    <p id="bio2"></p>
+                </div>
+            </div>
+        </div>
+        <button id="artist_1" class="btn"> Obtener Tyler the Creator </button>
+        <button id="artist_2" class="btn"> Obtener Imagine Dragons </button>
+
+    </div>
+
+    
+    <style >
+      
+    
+
+    </style>
+    
+    
+
+    <script>
+      let t=1986;
+      const c = 12;
+      console.log(t)
+      let p = {"titulo": "Llano en llamas", "autor":"Juan Rulfo"};
+      console.log(p.autor)
+      
+      function triplicar (a){
+        return 3*a;
+      }
+
+      let d =document.createElement("p");
+      d.textContent="Hola";
+
+      document.getElementById("encabezado").appendChild(d);
+
+      d.setAttribute('style', 'color:red');
+
+      async function obtenerJSON() {
+        const respuesta = await fetch('archivo.json');
+        const datos = await respuesta.json();
+        console.log(datos);
+        let d2 = document.createElement("p");
+
+        let texto = datos.autor;
+        d2.textContent = texto;
+        document.getElementById("encabezado").appendChild(d2);
+        d2.setAttribute("style", "color:black")
+
+
+      }
+    
+
+
+      async function obtenerServidor() {
+        const respuesta = await fetch('http://openlibrary.org/subjects/love.json?published_in=1500-1600');
+        const datos = await respuesta.json();
+        console.log(datos);
+        let d2 = document.createElement("p");
+
+        let texto = datos.works[0].title;
+        d2.textContent = texto;
+        document.getElementById("encabezado").appendChild(d2);
+        d2.setAttribute("style", "color:blue")
+      }
+
+      async function obtenerArtista(s, str_bio, str_img) {
+        const respuesta = await fetch('https://www.theaudiodb.com/api/v1/json/123/artist.php?i='+s);
+        const datos = await respuesta.json();
+        console.log(datos);
+
+        let p = document.getElementById(str_bio);
+        let texto = datos.artists[0].strBiography;
+        p.textContent = texto;
+
+        let link = datos.artists[0].strArtistThumb;
+        console.log(link);
+        let img = document.getElementById(str_img);
+        img.setAttribute("src", link);
+
+      }
+
+      document.getElementById("artist_1").addEventListener("click", () => obtenerArtista("112028", "bio1", "img1"));
+      document.getElementById("artist_2").addEventListener("click", () => obtenerArtista("114415", "bio2", "img2"));
+
+      document.getElementById("obtain").addEventListener("click", obtenerServidor);
+      
+    </script>
+
+  </body>
+</html>

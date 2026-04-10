@@ -1,0 +1,12 @@
+body{
+    background-color: blueviolet;
+    color: white;
+}
+
+div{
+    border: 10px white solid;
+}
+
+#contenedor{
+    border: 10px yellow solid;
+}
