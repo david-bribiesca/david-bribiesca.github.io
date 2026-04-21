@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi página con Picnic CSS</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic" />
+
+    <style>
+      .flex.demo {
+        margin: 0.2em 0;
+        background: #dbe2dc;
+        text-align: center;
+      }
+      .flex.demo div {
+        border: 0.1em solid pink;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="un_boton">Haz algo</button>
+    <button id="dos_boton">Votar</button>
+    <button id="mis_votos">Mis votos</button>
+    <div style="display: flex; justify-content: center">
+      <img src="" alt="" id="perro" style="height: 400px; width: 50%;" />
+        <div id="display"></div>
+    </div>
+    
+    <div class="flex two four-1200 demo">
+      <div id="bio">1</div>
+      <div id="imagen">2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <div class="tabs two">
+      <input id="tab-1" type="radio" name="tabgroupB" checked />
+      <label class="pseudo button toggle" for="tab-1">Pregunta 1</label>
+      <input id="tab-2" type="radio" name="tabgroupB" />
+      <label class="pseudo button toggle" for="tab-2">Pregunta 2</label>
+      <div class="row">
+        <div>
+          <p>
+            ¿Cómo vas con tu reto? <br />
+            Bien, nos falta algo pero vamos bien.
+          </p>
+        </div>
+        <div>
+          <p>
+            ¿Qué te parece lo mas complicado del reto? <br />
+            Lo más complicado es la creatividad de la propuesta así como la
+            definición formal de requerimientos.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let un_boton, dos_boton, mis_votos, id_img;
+
+      document.addEventListener("DOMContentLoaded", function () {
+        un_boton = document.getElementById("un_boton");
+        un_boton.addEventListener("click", irPorAlgo);
+        dos_boton = document.getElementById("dos_boton");
+        dos_boton.addEventListener("click", votar);
+        mis_votos = document.getElementById("mis_votos");
+        mis_votos.addEventListener("click", misVotos);
+
+        //console.log("DOM listo");
+      });
+
+
+      async function obtenerJSON() {
+        // const respuesta = await fetch('');
+        // const datos = await respuesta.json();
+        // console.log(datos);
+        //const textoArtista = document.createElement('p');
+        //textoArtista.textContent =
+        //biografia.appendChild(textoArtista);
+        //const imagenArtista= document.createElement('');
+        //imagenArtista.setAttribute('src', '');
+      }
+
+      async function irPorAlgo() {
+        try {
+          const respuesta = await fetch(
+            "https://api.thedogapi.com/v1/images/search?limit=1",
+            {
+              method: "GET",
+              headers: {
+                "x-api-key":
+                  "live_vTOfwpwjPvwqtLSJcrrm4wxh0Bp9Bs4NR3p8A6kalfcxd51RFB20IKKigNXrVADR",
+              },
+            },
+          );
+          if (!respuesta.ok) {
+            console.log("Error");
+            //throw new Error("Error");
+          }
+          const data = await respuesta.json();
+          console.log(data);
+          let imagen = document.getElementById("perro");
+          imagen.setAttribute("src", data[0].url);
+          id_img = data[0].id;
+        } catch (error) {
+          console.error("Error:", error.message);
+        }
+      }
+
+      async function votar() {
+        try {
+          const respuesta = await fetch("https://api.thedogapi.com/v1/votes", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "x-api-key": "live_vTOfwpwjPvwqtLSJcrrm4wxh0Bp9Bs4NR3p8A6kalfcxd51RFB20IKKigNXrVADR",
+            },
+            body: JSON.stringify({
+              image_id: id_img,
+              value: 1,
+            }),
+          });
+          if (!respuesta.ok) {
+            console.log("Error");
+            //throw new Error("Error de algo");
+          }
+          const data = await respuesta.json();
+          console.log(data);
+
+        } catch (error) {
+          console.error("Error:", error.message);
+        }
+      }
+
+      async function misVotos() {
+        try {
+          const respuesta = await fetch("https://api.thedogapi.com/v1/votes", {
+            method: "GET",
+            headers: {
+              "x-api-key": "live_vTOfwpwjPvwqtLSJcrrm4wxh0Bp9Bs4NR3p8A6kalfcxd51RFB20IKKigNXrVADR",
+            },
+          });
+          if (!respuesta.ok) {
+            console.log("Error");
+            //throw new Error("Error de algo");
+          }
+          const data = await respuesta.json();
+          console.log(data);
+            let display = document.getElementById("display");
+            display.innerHTML = "";
+            data.forEach((voto) => {
+              const votoElement = document.createElement("p");
+              votoElement.textContent = `Voto ID: ${voto.id}, Imagen ID: ${voto.image_id}, Valor: ${voto.value}`;
+              display.appendChild(votoElement);
+            });
+
+        } catch (error) {
+          console.error("Error:", error.message);
+        }
+      }
+    </script>
+  </body>
+</html>
