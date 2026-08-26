@@ -1,0 +1,17 @@
+[
+    {
+      "name": "Soccer",
+      "type": "Team",
+      "origin_country": "England"
+    },
+    {
+      "name": "Tennis",
+      "type": "Individual/Pair",
+      "origin_country": "France"
+    },
+    {
+      "name": "Basketball",
+      "type": "Team",
+      "origin_country": "United States"
+    }
+]
